@@ -34,16 +34,9 @@ class CalendarsController < ApplicationController
       plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
       end
-      @calendar = { title: 'Meeting', date: '2023-12-12' }
+      days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, :plans => today_plans}
       @week_days.push(days)
     end
 
-  end
-end
-
-class TechCamp # クラス名を修正
-  def get_week # メソッド名を修正
-    user_name = "P" # 変数名を修正
-    return user_name
   end
 end
